@@ -3,24 +3,6 @@ import mongoose from "mongoose";
 
 export async function createWorkout(req, resp) {
     const {title, load, reps} = req.body;
-
-    let emptyFields = [];
-
-    if(!title) {
-      emptyFields.push('title');
-    };
-
-    if(!load) {
-      emptyFields.push('load');
-    };
-
-    if(!reps) {
-      emptyFields.push('reps');
-    }
-
-    if(emptyFields.length > 0) {
-      return resp.status(400).json({ error: 'Please fill in all the fields', emptyFields });
-    }
   
     try {
       const workout = await Workout.create({title, load, reps});
