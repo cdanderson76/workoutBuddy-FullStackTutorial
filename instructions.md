@@ -42,6 +42,10 @@ NOTE: YOU WILL HAVE TO GRAB THE MONGO URI AND PORT FROM THE TEXT FILE TO MAKE TH
 
    Now go into the 'Home' component and swap you the 'useState' hook for the 'useWorkoutContext'
    hook.  Don't forget to 'dispatch' the action rather than updating the state.
+
+9. Update the context value in 'WorkoutForm' component.  In other words, when we've added a new
+   document to the database, we need to add the document in MongoDB to the new context global
+   state.  This keeps the UI in sync with the database.
    
 Now, instead of using LOCAL state, we should be using GLOBAL CONTEXT.  Whenever you add a workout
 now, the page should automatically show that workout without having to refresh!
