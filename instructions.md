@@ -22,7 +22,28 @@ NOTE: YOU WILL HAVE TO GRAB THE MONGO URI AND PORT FROM THE TEXT FILE TO MAKE TH
 
 5. Update the state by way of the 'useReducer' hook by describing the state change that you
    want to make.  Use 'SET_WORKOUT' (which gives a good description of the state change),
-   then list the data that you need to make the change. (10:18)
+   then list the data that you need to make the change.
 
+6. You've referenced this already, and now it's time to create the 'workoutsReducer' function
+   Don't forget to use the previous state value and the action for this.  Set up a switch
+   statement and based on the case, return the new value that you want each state to be.  Use
+   the following cases (don't forget your 'default' case):
+
+   SET_WORKOUTS (set all of the workouts)
+   CREATE_WOrkout (create a new workout object)
+
+7. Provide the 'state' and the 'dispatch' value within the 'WorkoutsContext.Provider' tag so
+   that it will be available in other components.  Now create a folder called 'hooks' within
+   the 'src' directory, and inside of it, create a file called 'useWorkoutsContext'.  Import
+   the 'WorkoutsContext' and the 'useContext' hook.  Complete the code to make the hook function
+
+8. In the 'WorkoutContext.Provider' tag in the 'WorkoutContext' file, spread out the state within
+   its value.
+
+   Now go into the 'Home' component and swap you the 'useState' hook for the 'useWorkoutContext'
+   hook.  Don't forget to 'dispatch' the action rather than updating the state.
+   
+Now, instead of using LOCAL state, we should be using GLOBAL CONTEXT.  Whenever you add a workout
+now, the page should automatically show that workout without having to refresh!
 
 Solution: https://shorturl.at/FlXmp
